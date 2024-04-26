@@ -99,7 +99,8 @@ def get_data(dataset_name):
   n_edges = len(sources)
 
   test_node_set = set(sources[timestamps > val_time]).union(set(destinations[timestamps > val_time]))
-  new_test_node_set = set(random.sample(test_node_set, int(0.1 * n_total_unique_nodes)))
+  new_test_node_set = set(random.sample(list(test_node_set), int(0.1 * n_total_unique_nodes)))
+
   new_test_source_mask = graph_df.u.map(lambda x: x in new_test_node_set).values
   new_test_destination_mask = graph_df.i.map(lambda x: x in new_test_node_set).values
 
