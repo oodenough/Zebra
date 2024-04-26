@@ -78,7 +78,7 @@ def load_feat(d):
 
 ############## load a batch of training data ##############
 def get_data(dataset_name):
-  graph_df = pd.read_csv('../data/{}/ml_{}.csv'.format(dataset_name,dataset_name))
+  graph_df = pd.read_csv('data/{}/ml_{}.csv'.format(dataset_name,dataset_name))
 
   #edge_features = np.load('../data/{}/ml_{}.npy'.format(dataset_name,dataset_name))
   #node_features = np.load('../data/{}/ml_{}_node.npy'.format(dataset_name,dataset_name)) 
